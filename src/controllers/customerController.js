@@ -45,7 +45,7 @@ controller.update = (req, res) => {
 
 
 controller.delete = (req, res) => {
-  const { id } = req.body.id;
+  const id  = req.params.id;
   req.getConnection((err, connection) => {
     connection.query('DELETE FROM customer WHERE id = ?', [id], (err, rows) => {
       if (err) {
